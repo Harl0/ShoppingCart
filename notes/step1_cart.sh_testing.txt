@@ -1,0 +1,14 @@
+Jasons-MBP-2:bin Jason$ ./cart.sh
+Found apple
+Found apple, count now: 1
+Found apple
+Found apple, count now: 2
+Found orange, count now: 1
+Found apple
+Found apple, count now: 3
+
+
+
+##########
+Total: £2.05
+##########
