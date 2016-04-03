@@ -208,3 +208,25 @@ Total: £1.45
 
 Jasons-MBP-2:bin Jason$ echo $?
 0
+
+
+Test 9: 0x apple, 0x orange; special offers enabled.
+Expected output: £0.00
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+apples_count = 0
+prime_value = 2
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 0
+apple_cost_to_customer = 0
+oranges_count = 0
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 0
+orange_cost_to_customer = 0
+
+##########
+Total: £0.00
+##########
