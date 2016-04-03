@@ -179,36 +179,8 @@ orange_cost_to_customer = 25
 Total: £2.05
 ##########
 
-
 Jasons-MBP-2:bin Jason$ echo $?
 0
-
-Test 9: 3x apple, 1x orange; special offers enabled.
-Expected output: £1.45
-
-Jasons-MBP-2:bin Jason$ ./cart.sh 
-special_offer=ON
-apples_count = 3
-prime_value = 2
-multipler = 1
-discount_to_bill = 1
-total_to_bill = 2
-apple_cost_to_customer = 120
-oranges_count = 1
-prime_value = 3
-multipler = 0
-discount_to_bill = 0
-total_to_bill = 1
-orange_cost_to_customer = 25
-
-##########
-Total: £1.45
-##########
-
-
-Jasons-MBP-2:bin Jason$ echo $?
-0
-
 
 Test 9: 0x apple, 0x orange; special offers enabled.
 Expected output: £0.00
@@ -230,3 +202,28 @@ orange_cost_to_customer = 0
 ##########
 Total: £0.00
 ##########
+
+Test 10: 3x apple, 1x orange; special offers enabled.
+Expected output: £1.45
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+special_offer=ON
+apples_count = 3
+prime_value = 2
+multipler = 1
+discount_to_bill = 1
+total_to_bill = 2
+apple_cost_to_customer = 120
+oranges_count = 1
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 1
+orange_cost_to_customer = 25
+
+##########
+Total: £1.45
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
