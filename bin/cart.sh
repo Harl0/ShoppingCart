@@ -14,6 +14,7 @@
 #			0.5 - Added special offer switch to prove successful implementation.
 #			1.0 - Baselined. Testing completed. 
 #				  Removed comments and check_special_offer function as now superfluous.
+#			2.0 - Refactored cost functions to reduce code duplication and improve scalability.
 
 #set common values
 . /Users/Jason/Documents/practice/DDCT/bin/common_procs.sh
@@ -37,51 +38,48 @@ done < $items
 
 function cost_of_apples {
 
-if [ $special_offer == "ON" ]
-then
-	let "prime_value= $apple_buy_ammount + 1"
+cost_of_items $apple_buy_ammount $apples_count $apple_value
 
-	let "multipler=$apples_count / $prime_value"
+apples_cost_to_customer=$cost_to_customer
 
-	let "discount_to_bill= 1 * $multipler"
-
-	let "total_to_bill=$apples_count - $discount_to_bill"
-
-	let "apple_cost_to_customer=$total_to_bill * $apple_value"
-
-else
-
-	let "apple_cost_to_customer=$apples_count * $apple_value"
-
-fi
 }
 
 function cost_of_oranges {	
 
+cost_of_items $orange_buy_ammount $oranges_count $orange_value 
+
+oranges_cost_to_customer=$cost_to_customer
+
+
+}
+
+function cost_of_items {	
+
 if [ $special_offer == "ON" ]
 then
-	let "prime_value= $orange_buy_ammount + 1"
+	let "prime_value= $1 + 1"
 
-	let "multipler=$oranges_count / $prime_value"
+	let "multipler= $2 / $prime_value"
 
 	let "discount_to_bill= 1 * $multipler"
 
-	let "total_to_bill=$oranges_count - $discount_to_bill"
+	let "total_to_bill= $2 - $discount_to_bill"
 
-	let "orange_cost_to_customer=$total_to_bill * $orange_value"
+	let "cost_to_customer= $total_to_bill * $3"
 
 else
 
-	let "orange_cost_to_customer=$oranges_count * $orange_value"
+	let "cost_to_customer= $2 * $3"
 
 fi
 
 }
 
+
 function basket_total {
 echo "##########"
 
-    let "basket_grand_total=$apple_cost_to_customer + $orange_cost_to_customer"
+    let "basket_grand_total=$apples_cost_to_customer + $oranges_cost_to_customer"
 
 printf "Total: £%.2f" $(echo "scale=10;$basket_grand_total/100" | bc -l)
 printf "\n"
@@ -93,3 +91,4 @@ count_items
 cost_of_apples
 cost_of_oranges
 basket_total
+
