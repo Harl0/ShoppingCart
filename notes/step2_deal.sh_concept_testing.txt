@@ -1,0 +1,10 @@
+./deal.sh 
+prime_value = 2
+multipler = 1
+discount_to_bill = 1
+total_to_bill = 2
+cost_to_customer = 2
+ 
+ 
+1.5
+5
