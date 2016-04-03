@@ -1,0 +1,168 @@
+Test 1: 3x apples, 1x orange.
+Expected output: £1.45
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+apples_count = 3
+prime_value = 2
+multipler = 1
+discount_to_bill = 1
+total_to_bill = 2
+apple_cost_to_customer = 120
+oranges_count = 1
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 1
+orange_cost_to_customer = 25
+
+##########
+Total: £1.45
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
+
+Test 2: 4x apples, 2x orange.
+Expected output: £1.70
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+apples_count = 4
+prime_value = 2
+multipler = 2
+discount_to_bill = 2
+total_to_bill = 2
+apple_cost_to_customer = 120
+oranges_count = 2
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 2
+orange_cost_to_customer = 50
+
+##########
+Total: £1.70
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
+
+Test 3: 1x apple, 1x orange
+Expected output: £0.85
+
+apples_count = 1
+prime_value = 2
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 1
+apple_cost_to_customer = 60
+oranges_count = 1
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 1
+orange_cost_to_customer = 25
+
+##########
+Total: £0.85
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
+
+Test 4: 0x apple, 1x orange
+Expected output: £0.25
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+apples_count = 0
+prime_value = 2
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 0
+apple_cost_to_customer = 0
+oranges_count = 1
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 1
+orange_cost_to_customer = 25
+
+##########
+Total: £0.25
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
+
+Test 5: 1x apple, 0x orange
+Expected output: £0.60
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+apples_count = 1
+prime_value = 2
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 1
+apple_cost_to_customer = 60
+oranges_count = 0
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 0
+orange_cost_to_customer = 0
+
+##########
+Total: £0.60
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
+
+Test 6: 58x apple, 106x orange
+Expected output: £34.90
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+apples_count = 58
+prime_value = 2
+multipler = 29
+discount_to_bill = 29
+total_to_bill = 29
+apple_cost_to_customer = 1740
+oranges_count = 105
+prime_value = 3
+multipler = 35
+discount_to_bill = 35
+total_to_bill = 70
+orange_cost_to_customer = 1750
+
+##########
+Total: £34.90
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
+
+Test 7: 2x bannana, 1x pineapple, 3x asdasddjasd9(((1212!!!, 1x orange
+Expected output: £0.25
+
+Jasons-MBP-2:bin Jason$ ./cart.sh 
+apples_count = 0
+prime_value = 2
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 0
+apple_cost_to_customer = 0
+oranges_count = 1
+prime_value = 3
+multipler = 0
+discount_to_bill = 0
+total_to_bill = 1
+orange_cost_to_customer = 25
+
+##########
+Total: £0.25
+##########
+
+Jasons-MBP-2:bin Jason$ echo $?
+0
+
+
