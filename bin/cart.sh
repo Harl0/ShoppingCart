@@ -11,6 +11,7 @@
 #			0.2 - Added common_procs and count_items function.
 #			0.3 - Added cost_of_items and basket_total functions.
 #			0.4 - Added step 2 requirements of special offers for apples and oranges.
+#			0.5 - Added special offer switch to prove successful implementation.
 
 #set common values
 . /Users/Jason/Documents/practice/DDCT/bin/common_procs.sh
@@ -35,6 +36,8 @@ done < $items
 function cost_of_apples {
 echo apples_count = $apples_count
 
+if [ $special_offer == "ON" ]
+then
 	let "prime_value= $apple_buy_ammount + 1"
 	echo prime_value = $prime_value
 
@@ -50,11 +53,19 @@ echo apples_count = $apples_count
 	let "apple_cost_to_customer=$total_to_bill * $apple_value"
 	echo apple_cost_to_customer = $apple_cost_to_customer
 
+else
+
+	let "apple_cost_to_customer=$apples_count * $apple_value"
+	echo apple_cost_to_customer = $apple_cost_to_customer
+
+fi
 }
 
 function cost_of_oranges {	
 echo oranges_count = $oranges_count
 
+if [ $special_offer == "ON" ]
+then
 	let "prime_value= $orange_buy_ammount + 1"
 	echo prime_value = $prime_value
 
@@ -70,6 +81,13 @@ echo oranges_count = $oranges_count
 	let "orange_cost_to_customer=$total_to_bill * $orange_value"
 	echo orange_cost_to_customer = $orange_cost_to_customer
 
+else
+
+	let "orange_cost_to_customer=$oranges_count * $orange_value"
+	echo orange_cost_to_customer = $orange_cost_to_customer
+
+fi
+
 }
 
 function basket_total {
@@ -82,6 +100,13 @@ echo "##########"
 
 }
 
+function check_special_offer {
+
+	echo special_offer=$special_offer
+
+}
+
+check_special_offer
 count_items
 cost_of_apples
 cost_of_oranges
